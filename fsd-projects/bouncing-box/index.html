@@ -74,27 +74,22 @@
       var points = 0;
       var speed = 10;
       
-
-
-
-
-
       /**
        * This Function will be called 20 times/second.
        * Each time it is called, it should move the Box to a new location.
        * If the box drifts off the screen, turn it around!
        */
-      function update() {
-        moveBoxTo(boardWidth);
-        positionX = positionX + 10;
+      function update() {       
         moveBoxTo(200);
+        moveBoxTo(boardWidth);
         moveBoxTo(positionX);
+        positionX = positionX + 10;
         positionX = positionX + speed;
         if (positionX === boardWidth) {
-    speed = speed * -1;
+        speed = speed * -1;
         }
         if (positionX === 0) {
-    speed = speed * -1;
+        speed = speed * -1;
         }
 
       }
@@ -109,8 +104,9 @@
       function handleBoxClick() {
         positionX = 0
         points = points + 1;
+        speed = 3 * points + 10;
         changeBoxText(points);
-        speed = speed + 3;
+        
      
       }
 
